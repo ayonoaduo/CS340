@@ -36,14 +36,31 @@ int main()
     return 0;
 }
 
-int partition()
+int partition(int *elements, int begin, int end)
 {
+    //Pivot
+    int pivot = elements[end];
     
+    //Index of pivot
+    int pIndex = begin;
+    int temp;
+    
+    //Check if current element is less or equal to pivot then swap
+    for(int i = start; i < end; i++)
+    {
+        if(a[i] <= pivot)
+        {
+            temp = elements[i];
+            elements[i] = elements[pIndex];
+            elements[pIndex] = temp;
+            pIndex++;
+        }
+    }
 }
     
-void Quicksort()
+void Quicksort(int *elements, int begin, int end)
 {
     
 }
 
-        
+ 
