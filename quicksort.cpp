@@ -26,7 +26,7 @@ int main()
         cin >> elements[i];
     }
     
-    Quicksort();
+    Quicksort(elements, 0, num-1);
     cout << "Sorted list:\n";
     for(int i = 0; i < num; i++)
     {
@@ -41,7 +41,9 @@ int partition()
     
 }
     
-void Quciksort()
+void Quicksort()
 {
     
 }
+
+        
