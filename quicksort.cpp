@@ -21,14 +21,20 @@ int main()
     int elements[num];
  
     cout << "Enter numbers to be sorted: ";
-    for(int i=0 ; i < num; i++)
+    for(int i = 0 ; i < num; i++)
     {
         cin >> elements[i];
     }
     
+    cout << "Sorted list:\n";
+    for(int i = 0; i < num; i++)
+    {
+        cout << elements[i] <<" ";
+    }
     return 0;
 }
 
 
         
         
+     
