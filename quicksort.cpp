@@ -16,7 +16,19 @@ int main()
     int num;
     
     cout << "Enter number of elements: ";
-    cin>>num;
+    cin >> num;
+    
+    int elements[num];
  
+    cout << "Enter numbers to be sorted: ";
+    for(int i=0 ; i < num; i++)
+    {
+        cin >> elements[i];
+    }
+    
     return 0;
 }
+
+
+        
+        
