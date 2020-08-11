@@ -9,7 +9,7 @@ Task: This program will will sort any number of elements using the Quicksort alg
 using namespace std;
 
 int partition(int *,int, int);
-void Quicksort(int *,int, int);void Quicksort(int *,int, int);
+void Quicksort(int *,int, int);
 
 int main()
 {
