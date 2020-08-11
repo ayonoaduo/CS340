@@ -56,6 +56,13 @@ int partition(int *elements, int begin, int end)
             pIndex++;
         }
     }
+    
+    //Exchange value of pivot and its index
+    temp = elements[end];
+    elements[end] = elements[pIndex];
+    elements[pIndex] = temp;
+    
+    return pIndex;  
 }
     
 void Quicksort(int *elements, int begin, int end)
@@ -63,4 +70,3 @@ void Quicksort(int *elements, int begin, int end)
     
 }
 
- 
