@@ -26,15 +26,22 @@ int main()
         cin >> elements[i];
     }
     
+    Quicksort();
     cout << "Sorted list:\n";
     for(int i = 0; i < num; i++)
     {
         cout << elements[i] <<" ";
     }
+    
     return 0;
 }
 
-
-        
-        
-     
+int partition()
+{
+    
+}
+    
+void Quciksort()
+{
+    
+}
