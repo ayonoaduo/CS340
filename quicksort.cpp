@@ -9,29 +9,38 @@ Task: This program will will sort any number of elements using the Quicksort alg
 using namespace std;
 
 int partition(int *,int, int);
-void Quicksort(int *,int, int);
+void quicksort(int *,int, int);
 
 int main()
 {
     int num;
+    char option;
     
-    cout << "Enter number of elements: ";
-    cin >> num;
-    
-    int elements[num];
- 
-    cout << "Enter numbers to be sorted: ";
-    for(int i = 0 ; i < num; i++)
+    do
     {
-        cin >> elements[i];
-    }
+        cout << "Enter number of elements: ";
+        cin >> num;
+
+        int elements[num];
+
+        cout << "Enter numbers to be sorted: ";
+        for(int i = 0 ; i < num; i++)
+        {
+            cin >> elements[i];
+        }
+
+        quicksort(elements, 0, num-1);
+        cout << "Sorted list:\n";
+        for(int i = 0; i < num; i++)
+        {
+            cout << elements[i] <<" ";
+        }
+        
+        cout << endl;
+        cout << "Do you want to continue? (y/n): ";
+        cin >> option;
     
-    Quicksort(elements, 0, num-1);
-    cout << "Sorted list:\n";
-    for(int i = 0; i < num; i++)
-    {
-        cout << elements[i] <<" ";
-    }
+    }while(option == 'y' || option == 'Y');
     
     return 0;
 }
@@ -46,9 +55,9 @@ int partition(int *elements, int begin, int end)
     int temp;
     
     //Check if current element is less or equal to pivot then swap
-    for(int i = start; i < end; i++)
+    for(int i = begin; i < end; i++)
     {
-        if(a[i] <= pivot)
+        if(elements[i] <= pivot)
         {
             temp = elements[i];
             elements[i] = elements[pIndex];
@@ -65,8 +74,14 @@ int partition(int *elements, int begin, int end)
     return pIndex;  
 }
     
-void Quicksort(int *elements, int begin, int end)
+void quicksort(int *elements, int begin, int end)
 {
-    
+    //Ensure end is not zero
+    if(begin < end)
+    {
+        //Recursively perform sort
+        int pIndex = partition(elements, begin, end);
+        quicksort(elements, begin, pIndex-1);
+        quicksort(elements, pIndex+1, end);
+    }
 }
-
